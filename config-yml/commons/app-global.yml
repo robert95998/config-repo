@@ -1,0 +1,15 @@
+### 全局配置
+# swagger:
+  # host: api2.dev.sxw.cn
+spring:
+  cloud:
+    config:
+      enabled: true
+
+sxw:
+  config:    
+    sentry:
+      enabled: false
+      server-name: ${info.build.name}
+      environment: ${spring.profiles.active}
+      release: ${info.build.version}

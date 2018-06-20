@@ -1,0 +1,5 @@
+sxw:
+  passport:
+    token:
+      validity-in-seconds: 86400
+      validity-in-seconds-for-refresh: 172800

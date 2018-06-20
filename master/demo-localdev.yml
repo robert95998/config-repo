@@ -1,0 +1,32 @@
+## Basic Info
+info:
+  build:
+    artifact: @project.artifactId@
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@
+    java-version: @java.version@
+    encoding: @project.build.sourceEncoding@
+    environment: ${spring.profiles.active}
+    server-port: ${server.port}
+
+## Global Configuration
+spring:
+  profiles:
+    active: localdev
+  application:
+    name: ${info.build.name}-${spring.profiles.active}
+server:
+  port: 2101
+
+## Eureka Configuration
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    healthcheck:
+      enabled: false
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://localhost:1001/eureka/

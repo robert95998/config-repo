@@ -1,0 +1,34 @@
+## Basic Info
+info:
+  build:
+    artifact: @project.artifactId@
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@
+    java-version: @java.version@
+    encoding: @project.build.sourceEncoding@
+    environment: ${spring.profiles.active}
+    server-port: ${server.port}
+
+## Global Configuration
+spring:
+  profiles:
+    active: localdev
+  application:
+    name: ${info.build.name}-${spring.profiles.active}
+server:
+  port: 1001
+
+## Eureka Configuration
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 60
+  server:
+    eviction-interval-timer-in-ms: 10000
+    enable-self-preservation: false
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
