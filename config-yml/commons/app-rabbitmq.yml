@@ -1,5 +1,0 @@
-spring:
-  rabbitmq:
-    addresses: amqp://192.168.2.56:5672
-    username: sxw_demo
-    password: sxw_demo

@@ -1,0 +1,20 @@
+## Global Configuration
+spring:
+  profiles:
+    active: localdev
+  application:
+    name: demo-service-${spring.profiles.active}
+server:
+  port: 2101
+
+## Eureka Configuration
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    healthcheck:
+      enabled: true
+#    registerWithEureka: false
+#    fetchRegistry: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
